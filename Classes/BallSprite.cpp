@@ -3,11 +3,11 @@
 USING_NS_CC;
 
 BallSprite::BallSprite()
-: _removedNo(0),
-: _checkedX(false),
-: _checkedY(false),
-: _fallCount(0),
-: _positionIndex(0, 0)
+: _removedNo(0)
+, _checkedX(false)
+, _checkedY(false)
+, _fallCount(0)
+, _positionIndex(0, 0)
 {
 }
 
@@ -16,7 +16,7 @@ BallSprite* BallSprite::create(BallType type, bool visible)
     auto pRet = new BallSprite();
     if (pRet && pRet->init(type, visible))
     {
-        pret->autorelease();
+        pRet->autorelease();
         return pRet;
     }
     
@@ -54,7 +54,7 @@ BallSprite::PositionIndex BallSprite::getPositionIndex()
 
 void BallSprite::setPositionIndex(BallSprite::PositionIndex positionIndex)
 {
-    _positionIndex = PositionIndex;
+    _positionIndex = positionIndex;
     setTag(generateTag(_positionIndex));
 }
 
