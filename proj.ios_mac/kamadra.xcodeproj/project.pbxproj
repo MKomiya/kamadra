@@ -57,6 +57,7 @@
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
+		D00505CB19E80AE000D4122E /* GameLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D00505C919E80AE000D4122E /* GameLayer.cpp */; };
 		D0375F6719E6C2D100D2092E /* BallSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0375F6519E6C2D100D2092E /* BallSprite.cpp */; };
 		D0976A0D19E2D22200662B05 /* 0.png in Resources */ = {isa = PBXBuildFile; fileRef = D09769EC19E2D22200662B05 /* 0.png */; };
 		D0976A0E19E2D22200662B05 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = D09769ED19E2D22200662B05 /* 1.png */; };
@@ -284,6 +285,8 @@
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D00505C919E80AE000D4122E /* GameLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameLayer.cpp; path = ../Classes/GameLayer.cpp; sourceTree = "<group>"; };
+		D00505CA19E80AE000D4122E /* GameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameLayer.h; path = ../Classes/GameLayer.h; sourceTree = "<group>"; };
 		D0375F6519E6C2D100D2092E /* BallSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BallSprite.cpp; path = ../Classes/BallSprite.cpp; sourceTree = "<group>"; };
 		D0375F6619E6C2D100D2092E /* BallSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BallSprite.h; path = ../Classes/BallSprite.h; sourceTree = "<group>"; };
 		D09769EC19E2D22200662B05 /* 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 0.png; sourceTree = "<group>"; };
@@ -396,6 +399,8 @@
 				D0375F6619E6C2D100D2092E /* BallSprite.h */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
+				D00505C919E80AE000D4122E /* GameLayer.cpp */,
+				D00505CA19E80AE000D4122E /* GameLayer.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -785,6 +790,7 @@
 				D0375F6719E6C2D100D2092E /* BallSprite.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				D00505CB19E80AE000D4122E /* GameLayer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
