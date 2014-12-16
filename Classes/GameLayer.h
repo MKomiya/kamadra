@@ -35,16 +35,25 @@ protected:
     
     std::default_random_engine _engine;
     std::discrete_distribution<int> _distForBall;
+    BallSprite* _movingBall;
+    bool _movedBall;
     
     void initBackground();
     void initBalls();
     BallSprite* newBalls(BallSprite::PositionIndex positionIndex);
+    BallSprite* getTouchBall(cocos2d::Point touchPos, BallSprite::PositionIndex withoutPosIndex = BallSprite::PositionIndex());
+    void movedBall();
     
 public:
     GameLayer();
     virtual bool init();
     CREATE_FUNC(GameLayer);
     static cocos2d::Scene* createScene();
+    
+    virtual bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* unused_event);
+    virtual void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* unused_event);
+    virtual void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* unused_event);
+    virtual void onTouchCancelled(cocos2d::Touch* touch, cocos2d::Event* unused_event);
 };
 
 #endif /* defined(__kamadra__GameLayer__) */

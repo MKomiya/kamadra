@@ -14,6 +14,8 @@
 USING_NS_CC;
 
 GameLayer::GameLayer()
+: _movingBall(nullptr)
+, _movedBall(false)
 {
     std::random_device device;
     _engine = std::default_random_engine(device());
@@ -32,6 +34,14 @@ bool GameLayer::init()
 {
     if (!Layer::init())
         return false;
+    
+    auto touchListener = EventListenerTouchOneByOne::create();
+    touchListener->setSwallowTouches(_swallowsTouches);
+    touchListener->onTouchBegan     = CC_CALLBACK_2(GameLayer::onTouchBegan, this);
+    touchListener->onTouchMoved     = CC_CALLBACK_2(GameLayer::onTouchMoved, this);
+    touchListener->onTouchEnded     = CC_CALLBACK_2(GameLayer::onTouchEnded, this);
+    touchListener->onTouchCancelled = CC_CALLBACK_2(GameLayer::onTouchCancelled, this);
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
     
     initBackground();
     initBalls();
@@ -90,4 +100,16 @@ BallSprite* GameLayer::newBalls(BallSprite::PositionIndex positionIndex)
     addChild(ball, ZOrder::Ball);
     
     return ball;
+}
+
+bool GameLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *unused_event)
+{
+    _movedBall = false;
+    _movingBall = getTouchBall(touch->getLocation());
+    
+    if (_movingBall) {
+        return true;
+    }
+    
+    return false;
 }
